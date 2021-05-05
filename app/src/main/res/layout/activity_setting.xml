@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/activity_setting"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".activity.SettingActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="One Time Alarm"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_date"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#7A122A"
+            android:src="@drawable/ic_calendar_white"
+            android:layout_marginBottom="3dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"/>
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alarm Date"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_time"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#7A122A"
+            android:src="@drawable/ic_time_white"
+            android:layout_marginTop="3dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alarm Time"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="Alarm Message"
+        android:inputType="text"/>
+
+    <Button
+        android:id="@+id/btn_once_alarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="#7A122A"
+        android:textColor="@android:color/white"
+        android:text="Set One Time Alarm"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Repeating Alarm"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_time_red"/>
+
+        <TextView
+            android:id="@+id/tv_repeating_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daily Alarm Reminder at 9 AM"/>
+
+        <Switch
+            android:id="@+id/switch_repeating_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>
