@@ -40,7 +40,7 @@
     </application>
 
     <queries>
-        <package android:name="com.dicoding.picodiploma.mynotesapp" />
+        <package android:name="com.example.submission3github" />
     </queries>
 
 </manifest>
