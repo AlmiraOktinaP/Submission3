@@ -4,10 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <permission
-        android:name="com.example.consumerapp.READ_DATABASE"/>
-    <permission
-        android:name="com.example.consumerapp.WRITE_DATABASE"/>
+    <permission android:name="com.example.consumerapp.READ_DATABASE"/>
+    <permission android:name="com.example.consumerapp.WRITE_DATABASE"/>
 
     <application
         android:allowBackup="true"
