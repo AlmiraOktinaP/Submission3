@@ -42,9 +42,12 @@ public class AlarmReceiver extends BroadcastReceiver {
         String type = intent.getStringExtra(EXTRA_TYPE);
         String message = intent.getStringExtra(EXTRA_MESSAGE);
 
-        String title = type.equalsIgnoreCase(TYPE_ONE_TIME) ? TYPE_ONE_TIME: TYPE_REPEATING;
+        String title = type.equalsIgnoreCase(TYPE_ONE_TIME) ? TYPE_ONE_TIME : TYPE_REPEATING;
+        int notifId = type.equalsIgnoreCase(TYPE_ONE_TIME) ? ID_ONETIME : ID_REPEATING;
 
         showToast(context, title, message);
+
+        showAlarmNotification(context, title, message, notifId);
     }
 
     private void showToast(Context context, String title, String message) {
@@ -156,6 +159,4 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         Objects.requireNonNull(alarmManager).cancel(pendingIntent);
     }
-
-
 }

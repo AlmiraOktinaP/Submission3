@@ -1,5 +1,6 @@
 package com.example.submission3github.activity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -49,6 +50,9 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
         Switch switchSetRepeat = findViewById(R.id.switch_repeating_alarm);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("save", MODE_PRIVATE);
+        switchSetRepeat.setChecked(sharedPreferences.getBoolean("value", true));
+
         switchSetRepeat.setOnClickListener(this);
 
         alarmReceiver = new AlarmReceiver();
@@ -75,8 +79,16 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         } else
             if (switchSetRepeat.isChecked()) {
                 alarmReceiver.setRepeatingAlarm(getBaseContext());
-            } else if (!switchSetRepeat.isChecked()) {
+                SharedPreferences.Editor editor = getSharedPreferences("save", MODE_PRIVATE).edit();
+                editor.putBoolean("value", true);
+                editor.apply();
+                switchSetRepeat.setChecked(true);
+            } else {
                 alarmReceiver.setAlarmRepeatingCancel(getBaseContext());
+                SharedPreferences.Editor editor = getSharedPreferences("save", MODE_PRIVATE).edit();
+                editor.putBoolean("value", false);
+                editor.apply();
+                switchSetRepeat.setChecked(false);
             }
     }
 
@@ -106,5 +118,4 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 break;
         }
     }
-
 }
