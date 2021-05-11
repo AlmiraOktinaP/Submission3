@@ -4,8 +4,12 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <permission android:name="com.example.submission3github.READ_DATABASE" android:protectionLevel="normal" />
-    <permission android:name="com.example.submission3github.WRITE_DATABASE" android:protectionLevel="normal" />
+    <permission
+        android:name="com.example.submission3github.READ_DATABASE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.example.submission3github.WRITE_DATABASE"
+        android:protectionLevel="normal" />
 
     <application
         android:allowBackup="true"
@@ -14,19 +18,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <receiver
             android:name=".notification.AlarmReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true"/>
 
         <activity android:name=".activity.SettingActivity"
             android:parentActivityName=".activity.MainActivity"/>
 
         <activity android:name=".activity.FavoriteActivity"
             android:parentActivityName=".activity.MainActivity"/>
+
         <activity
             android:name=".activity.DetailActivity"
-            android:parentActivityName=".activity.MainActivity" />
+            android:parentActivityName=".activity.MainActivity"/>
+
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
